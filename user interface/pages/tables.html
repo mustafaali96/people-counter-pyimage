@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>People Counter Dashboard</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- MetisMenu CSS -->
+        <link href="../css/metisMenu.min.css" rel="stylesheet">
+
+        <!-- DataTables CSS -->
+        <link href="../css/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+
+        <!-- DataTables Responsive CSS -->
+        <link href="../css/dataTables/dataTables.responsive.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="../css/startmin.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+
+        <div id="wrapper">
+
+            <!-- Navigation -->
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">People Counter</a>
+                </div>
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <ul class="nav navbar-nav navbar-left navbar-top-links">
+                    <li><a href="#"><i class="fa fa-home fa-fw"></i> Website</a></li>
+                </ul>
+
+                <ul class="nav navbar-right navbar-top-links">
+                    <li class="dropdown navbar-inverse">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-bell fa-fw"></i> <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu dropdown-alerts">
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="fa fa-comment fa-fw"></i> New Review
+                                        <span class="pull-right text-muted small">4 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                        <span class="pull-right text-muted small">12 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                        <span class="pull-right text-muted small">4 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="fa fa-tasks fa-fw"></i> New Task
+                                        <span class="pull-right text-muted small">4 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                        <span class="pull-right text-muted small">4 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a class="text-center" href="#">
+                                    <strong>See All Alerts</strong>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-user fa-fw"></i> Admin <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- /.navbar-top-links -->
+
+                <div class="navbar-default sidebar" role="navigation">
+                    <div class="sidebar-nav navbar-collapse">
+                        <ul class="nav" id="side-menu">
+                            <li class="sidebar-search">
+                                <div class="input-group custom-search-form">
+                                    <input type="text" class="form-control" placeholder="Search...">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary" type="button">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                </span>
+                                </div>
+                                <!-- /input-group -->
+                            </li>
+                            <li>
+                                <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="flot.html">Flot Charts</a>
+                                    </li>
+                                    <li>
+                                        <a href="morris.html">Sales Charts</a>
+                                    </li>
+                                </ul>
+                                <!-- /.nav-second-level -->
+                            </li>
+                            <li>
+                                <a href="tables.html"><i class="fa fa-table fa-fw"></i> crowd logs</a>
+                            </li>
+                            
+                            <li>
+                                <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="panels-wells.html">Panels and Wells</a>
+                                    </li>
+                                    <li>
+                                        <a href="buttons.html">Buttons</a>
+                                    </li>
+                                    <li>
+                                        <a href="notifications.html">Notifications</a>
+                                    </li>
+                                    <li>
+                                        <a href="typography.html">Typography</a>
+                                    </li>
+                                    <li>
+                                        <a href="icons.html"> Icons</a>
+                                    </li>
+                                    <li>
+                                        <a href="grid.html">Grid</a>
+                                    </li>
+                                </ul>
+                                <!-- /.nav-second-level -->
+                            </li>
+                            <li>
+                                <a href="localhost:8050"><i class="fa fa-sitemap fa-fw"></i> Outlets<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="localhost:8050" target="_blank">Dolmen Mall</a>
+                                    </li>
+                                    <li>
+                                        <a href="localhost:8050">Lucky One</a>
+                                    </li>
+                                    <li>
+                                        <a href="localhost:8050">Saddar</a>
+                                        
+                                        <!-- /.nav-third-level -->
+                                    </li>
+                                </ul>
+                                <!-- /.nav-second-level -->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div id="page-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="page-header">Crowd Logs</h1>
+                        </div>
+                        <!-- /.col-lg-12 -->
+                    </div>
+                    <!-- /.row -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Data Table
+                                </div>
+                                <!-- /.panel-heading -->
+                                <div class="panel-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                            <thead>
+                                                <tr>
+                                                    <th>Outlet</th>
+                                                    <th>Location</th>
+                                                    <th>Crowd</th>
+                                                    <th>Last Week Crowd</th>
+                                                    <th>Monthly Crowd</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="odd gradeX">
+                                                    <td>J.</td>
+                                                    <td>Gulshan</td>
+                                                    <td>6</td>
+                                                    <td class="center">40</td>
+                                                    <td class="center">187
+                                                </tr>
+                                                <tr class="even gradeC">
+                                                    <td>J.</td>
+                                                    <td>Gulshan</td>
+                                                    <td>4</td>
+                                                    <td class="center">34</td>
+                                                    <td class="center">214
+                                                </tr>
+                                                <tr class="odd gradeA">
+                                                    <td>J.</td>
+                                                    <td>Gulshan</td>
+                                                    <td>4</td>
+                                                    <td class="center">55</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="even gradeA">
+                                                    <td>J.</td>
+                                                    <td>Gulshan</td>
+                                                    <td>3</td>
+                                                    <td class="center">16</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="odd gradeA">
+                                                    <td>J.</td>
+                                                    <td>Gulshan</td>
+                                                    <td>5</td>
+                                                    <td class="center">17</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="even gradeA">
+                                                    <td>J.</td>
+                                                    <td>Malir Cantt</td>
+                                                    <td>2</td>
+                                                    <td class="center">16</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="gradeA">
+                                                    <td>Agha Noor</td>
+                                                    <td>Tariq Road  </td>
+                                                    <td>12</td>
+                                                    <td class="center">17</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="gradeA">
+                                                    <td>Agha Noor</td>
+                                                    <td>Tariq Road</td>
+                                                    <td>12</td>
+                                                    <td class="center">18</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="gradeA">
+                                                    <td>Agha Noor</td>
+                                                    <td>Tariq Road</td>
+                                                    <td>12</td>
+                                                    <td class="center">28</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="gradeA">
+                                                    <td>Agha Noor</td>
+                                                    <td>Clifton  </td>
+                                                    <td>9</td>
+                                                    <td class="center">48</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="gradeA">
+                                                    <td>Agha Noor</td>
+                                                    <td>Clifton</td>
+                                                    <td>9</td>
+                                                    <td class="center">18</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="gradeA">
+                                                    <td>Agha Noor</td>
+                                                    <td>North Nazimabad</td>
+                                                    <td>5</td>
+                                                    <td class="center">37</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="gradeA">
+                                                    <td>Agha Noor</td>
+                                                    <td>North Nazimabad</td>
+                                                    <td>11</td>
+                                                    <td class="center">37</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="gradeA">
+                                                    <td>Agha Noor</td>
+                                                    <td>North Nazimabad</td>
+                                                    <td>12</td>
+                                                    <td class="center">38</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="gradeA">
+                                                    <td>Agha Noor</td>
+                                                    <td>Tariq Road  </td>
+                                                    <td>13</td>
+                                                    <td class="center">56</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="gradeA">
+                                                    <td>Agha Noor</td>
+                                                    <td>Tariq Road </td>
+                                                    <td>13</td>
+                                                    <td class="center">31</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="gradeA">
+                                                    <td>Agha Noor</td>
+                                                    <td>Tariq Road </td>
+                                                    <td>12</td>
+                                                    <td class="center">38</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="gradeA">
+                                                    <td>Agha Noor</td>
+                                                    <td>Gulshan</td>
+                                                    <td>7</td>
+                                                    <td class="center">38</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="gradeA">
+                                                    <td>Outfitters</td>
+                                                    <td>Gulshan</td>
+                                                    <td>7</td>
+                                                    <td class="center">55</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="gradeA">
+                                                    <td>Outfitters</td>
+                                                    <td>Gulshan</td>
+                                                    <td>7</td>
+                                                    <td class="center">28</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="gradeA">
+                                                    <td>Outfitters</td>
+                                                    <td>Gulshan</td>
+                                                    <td>8</td>
+                                                    <td class="center">43</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="gradeA">
+                                                    <td>Outfitters</td>
+                                                    <td>Gulshan</td>
+                                                    <td>8</td>
+                                                    <td class="center">51</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="gradeA">
+                                                    <td>Outfitters</td>
+                                                    <td>Ocean</td>
+                                                    <td>8</td>
+                                                    <td class="center">42</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="gradeA">
+                                                    <td>Outfitters</td>
+                                                    <td>FB Area</td>
+                                                    <td>7</td>
+                                                    <td class="center">42</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="gradeA">
+                                                    <td>Outfitters</td>
+                                                    <td>FB Area</td>
+                                                    <td>10</td>
+                                                    <td class="center">41</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="gradeA">
+                                                    <td>Zara</td>
+                                                    <td>Johar</td>
+                                                    <td>12</td>
+                                                    <td class="center">34</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="gradeA">
+                                                    <td>Zara</td>
+                                                    <td>Johar</td>
+                                                    <td>12</td>
+                                                    <td class="center">23</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="gradeA">
+                                                    <td>Zara</td>
+                                                    <td>Johar</td>
+                                                    <td>12</td>
+                                                    <td class="center">64</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="gradeA">
+                                                    <td>Zara</td>
+                                                    <td>Johar</td>
+                                                    <td>9</td>
+                                                    <td class="center">36</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="gradeA">
+                                                    <td>Zara</td>
+                                                    <td>Johar</td>
+                                                    <td>5</td>
+                                                    <td class="center">57</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="gradeA">
+                                                    <td>Zara</td>
+                                                    <td>Johar</td>
+                                                    <td>5</td>
+                                                    <td class="center">25</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="gradeC">
+                                                    <td>Khaadi</td>
+                                                    <td>Johar</td>
+                                                    <td>2</td>
+                                                    <td class="center">31</td>
+                                                    <td class="center">214
+                                                </tr>
+                                                <tr class="gradeA">
+                                                    <td>Khaadi</td>
+                                                    <td>Airpor</td>
+                                                    <td>3</td>
+                                                    <td class="center">33</td>
+                                                    <td class="center">325
+                                                </tr>
+                                                <tr class="gradeA">
+                                                    <td>Khaadi</td>
+                                                    <td>Airport</td>
+                                                    <td>7</td>
+                                                    <td class="center">35</td>
+                                                    <td class="center">325
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- /.table-responsive -->
+                                    <div class="well"></div>
+                                </div>
+                                <!-- /.panel-body -->
+                            </div>
+                            <!-- /.panel -->
+                        </div>
+                        <!-- /.col-lg-12 -->
+                    </div>
+                    <!-- /.row -->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    J.</div>
+                                <!-- /.panel-heading -->
+                                <div class="panel-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Manager</th>
+                                                    <th>Location</th>
+                                                    <th>Username</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Ali</td>
+                                                    <td>Gulshan</td>
+                                                    <td>@Ali.j</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Hasan</td>
+                                                    <td>Malir</td>
+                                                    <td>@fat.j</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>Larry</td>
+                                                    <td>Clifton</td>
+                                                    <td>@twe.j</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- /.table-responsive -->
+                                </div>
+                                <!-- /.panel-body -->
+                            </div>
+                            <!-- /.panel -->
+                        </div>
+                        <!-- /.col-lg-6 -->
+                        <div class="col-lg-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Khaadi</div>
+                                <!-- /.panel-heading -->
+                                <div class="panel-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Manager</th>
+                                                    <th>Location</th>
+                                                    <th>Username</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Kim</td>
+                                                    <td>Johar</td>
+                                                    <td>@mdo.kh</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Joe</td>
+                                                    <td>Airport</td>
+                                                    <td>@fat.kh</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>Hud</td>
+                                                    <td>DHA</td>
+                                                    <td>@twi.kh</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- /.table-responsive -->
+                                </div>
+                                <!-- /.panel-body -->
+                            </div>
+                            <!-- /.panel -->
+                        </div>
+                        <!-- /.col-lg-6 -->
+                    </div>
+                    <!-- /.row -->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Outfitter
+                                </div>
+                                <!-- /.panel-heading -->
+                                <div class="panel-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Manager</th>
+                                                    <th>Location</th>
+                                                    <th>Username</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Mark</td>
+                                                    <td>Gulshan</td>
+                                                    <td>@mo.out</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Jacob</td>
+                                                    <td>Ocean</td>
+                                                    <td>@faq.out</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>Larry</td>
+                                                    <td>FB Area</td>
+                                                    <td>@lar.out</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- /.table-responsive -->
+                                </div>
+                                <!-- /.panel-body -->
+                            </div>
+                            <!-- /.panel -->
+                        </div>
+                        <!-- /.col-lg-6 -->
+                        <div class="col-lg-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Zara
+                                </div>
+                                <!-- /.panel-heading -->
+                                <div class="panel-body">
+                                    <div class="table-responsive table-bordered">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Manager</th>
+                                                    <th>Location</th>
+                                                    <th>Username</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Mark</td>
+                                                    <td>Johar</td>
+                                                    <td>@mdo.za</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Jacob</td>
+                                                    <td>Gulshan</td>
+                                                    <td>@fa.za</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>Larry</td>
+                                                    <td>Airport</td>
+                                                    <td>@he.za</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- /.table-responsive -->
+                                </div>
+                                <!-- /.panel-body -->
+                            </div>
+                            <!-- /.panel -->
+                        </div>
+                        <!-- /.col-lg-6 -->
+                    </div>
+                    <!-- /.row -->
+                    <div class="row"><!-- /.col-lg-6 --><!-- /.col-lg-6 -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /#page-wrapper -->
+
+        </div>
+        <!-- /#wrapper -->
+
+        <!-- jQuery -->
+        <script src="../js/jquery.min.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="../js/bootstrap.min.js"></script>
+
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="../js/metisMenu.min.js"></script>
+
+        <!-- DataTables JavaScript -->
+        <script src="../js/dataTables/jquery.dataTables.min.js"></script>
+        <script src="../js/dataTables/dataTables.bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="../js/startmin.js"></script>
+
+        <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+        <script>
+            $(document).ready(function() {
+                $('#dataTables-example').DataTable({
+                        responsive: true
+                });
+            });
+        </script>
+
+    </body>
+</html>
